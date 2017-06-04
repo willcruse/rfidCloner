@@ -18,7 +18,7 @@ void clearCard(){
 }
 
 void loop() {
-  sSerial.write(byte("!RW"));
+  sSerial.print("!RW");
   sSerial.write(byte(0x02));
   sSerial.write(byte(32));
   if (sSerial.available() > 0) {
