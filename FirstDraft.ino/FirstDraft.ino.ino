@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>
-#define rxPin 12
-#define txPin 13
+#define rxPin 8
+#define txPin 6
 
 SoftwareSerial sSerial(rxPin, txPin);
 int data;
@@ -13,8 +13,12 @@ void setup() {
   pinMode(txPin, OUTPUT);
 }
 
+void clearCard(){
+    
+}
+
 void loop() {
-  sSerial.print("!RW");
+  sSerial.write(byte("!RW"));
   sSerial.write(byte(0x02));
   sSerial.write(byte(32));
   if (sSerial.available() > 0) {
